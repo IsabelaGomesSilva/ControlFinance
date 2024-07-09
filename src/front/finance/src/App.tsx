@@ -1,6 +1,9 @@
 import './App.scss'
+import { Card } from './components/card/card';
+import { AccountData } from './interface/AccountData';
 
 function App() {
+  const data: AccountData[] = [];
   return (
     <main>
       <header className='header-container'>
@@ -40,7 +43,17 @@ function App() {
         </div>
       </div>
       <section id="account-section">
-        <h1> a</h1>
+       <div className="container">
+        <div className="card-grid">
+          {data.map(accountData => 
+            <Card 
+              cashBalance={accountData.cashBalance}
+              totalExpenses={accountData.totalExpenses}
+              totalCash={accountData.totalCash}
+            />
+          )}
+        </div>
+       </div>
       </section>
 
       <section id="cash-section">
