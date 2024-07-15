@@ -1,9 +1,9 @@
 import './App.scss'
 import { Card } from './components/card/card';
-import { AccountData } from './interface/AccountData';
+import { useAccountData } from './hooks/useAccountData';
 
 function App() {
-  const data: AccountData[] = [];
+  const {data }= useAccountData();
   return (
     <main>
       <header className='header-container'>
@@ -45,7 +45,7 @@ function App() {
       <section id="account-section">
        <div className="container">
         <div className="card-grid">
-          {data.map(accountData => 
+          {data?.map(accountData => 
             <Card 
               cashBalance={accountData.cashBalance}
               totalExpenses={accountData.totalExpenses}
