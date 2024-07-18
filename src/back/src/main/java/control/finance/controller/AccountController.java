@@ -34,6 +34,7 @@ public class AccountController {
     })
     public ResponseEntity<List<AccountDto>> getAll(){
         List<AccountDto> accounts = accountService.getAll();
+        
         return ResponseEntity.ok(accounts);
     }
 

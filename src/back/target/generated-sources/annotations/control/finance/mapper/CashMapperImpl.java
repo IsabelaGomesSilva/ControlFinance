@@ -7,7 +7,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-07-15T10:24:40-0300",
+    date = "2024-07-18T15:41:12-0300",
     comments = "version: 1.5.2.Final, compiler: javac, environment: Java 17.0.11 (Eclipse Adoptium)"
 )
 public class CashMapperImpl implements CashMapper {

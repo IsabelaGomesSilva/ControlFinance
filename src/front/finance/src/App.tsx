@@ -1,9 +1,14 @@
 import './App.scss'
-import { Card } from './components/card/card';
-import { useAccountData } from './hooks/useAccountData';
+import { Account } from './components/Account/AccountLayout';
+import { useAccountData, useCashData, useExpensesData } from './hooks/ServiceAPI';
+import { CardCarousel } from './components/Cash/Card/CardCarousel';
 
 function App() {
   const {data }= useAccountData();
+  const {data: dataCash} = useCashData();
+  const dataExpenses = useExpensesData().data;
+  
+
   return (
     <main>
       <header className='header-container'>
@@ -15,15 +20,16 @@ function App() {
           </div>
         </div>
         <nav className="menu-options">
-          <a href="">Account</a>
-          <a href="">Cash</a>
-          <a href="">Expenses</a>
+          <a href="#account-section">Account</a>
+          <a href="#cash-section">Cash</a>
+          <a href="#expenses-section">Expenses</a>
         </nav>
         <div className='img-header'>
           <img src="./img-header.png"  className='image-header'/>
         </div>
+        
       </header>
-   
+      
       <div className="content-container">
         <div className="heading-container">
           <h2>Master your money,</h2>
@@ -45,24 +51,54 @@ function App() {
       <section id="account-section">
        <div className="container">
         <div className="card-grid">
-          {data?.map(accountData => 
-            <Card 
+        {dataCash ? ( data?.map(accountData => 
+            <Account key={accountData.id}
               cashBalance={accountData.cashBalance}
               totalExpenses={accountData.totalExpenses}
               totalCash={accountData.totalCash}
-            />
-          )}
+            />)) : (
+            <div>Loading cards...</div>
+         )}
         </div>
        </div>
       </section>
 
       <section id="cash-section">
-      <h1> a</h1>
+        <div className="container">
+          <div className="card-grid">
+            {dataCash ? ( <CardCarousel cardsData={dataCash} />
+            ) : (
+            <div>Loading cards...</div>
+             )}
+          </div>
+        </div>
       </section>
 
       <section id="expenses-section">
-      <h1> a</h1>
+        <div className="container">
+          <div className="card-grid">
+            {dataExpenses ? ( dataExpenses?.map(cashData => 
+              <Account key={cashData.id}
+                cashBalance={""}
+                totalExpenses={''}
+                totalCash={''}
+              />)
+            ) : (
+            <div>Loading cards...</div>
+             )}
+          </div>
+        </div>
       </section>
+      <footer id="main-footer">
+        <img src="./logo1.png" alt="Finance Control Logo" className='logo' />
+        
+        <div className="footer-name">
+          <h5>Desenvolvido por Isa</h5>
+        </div> 
+        <div className='img-header'>
+          <img src="./img-header.png"  className='image-header'/>
+        </div> 
+      </footer>
     </main>
   )
 }

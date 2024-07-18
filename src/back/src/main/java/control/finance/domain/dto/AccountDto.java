@@ -1,5 +1,7 @@
 package control.finance.domain.dto;
 
+import static control.finance.domain.CurrencyFormatter.formatToUSD;
+
 public class AccountDto {
     
     private String id;
@@ -8,14 +10,14 @@ public class AccountDto {
     private Double totalExpenses; 
     private Double totalCash;
     
-    public Double getTotalExpenses() {
-        return totalExpenses;
+    public String getTotalExpenses() {
+        return formatToUSD(totalExpenses);
     }
     public void setTotalExpenses(Double totalExpenses) {
         this.totalExpenses = totalExpenses;
     }
-    public Double getTotalCash() {
-        return totalCash;
+    public String getTotalCash() {
+        return formatToUSD(totalCash);
     }
     public void setTotalCash(Double totalCash) {
         this.totalCash = totalCash;
@@ -26,11 +28,11 @@ public class AccountDto {
     public void setId(String id) {
         this.id = id;
     }
-    public Double getCashBalance() {
-        return cashBalance;
+    public String getCashBalance() {
+        return formatToUSD(cashBalance);
     }
     public void setCashBalance(Double cashBalance) {
-        this.cashBalance = cashBalance;
+        this.cashBalance =  cashBalance;
     }
     public boolean isIsEnabled() {
         return isEnabled;

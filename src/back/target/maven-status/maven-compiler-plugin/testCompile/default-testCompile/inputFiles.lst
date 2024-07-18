@@ -1,1 +1,10 @@
-C:\dev\finance\src\test\java\control\finance\FinanceApplicationTests.java
+C:\dev\ControlFinance\src\back\src\test\java\control\finance\domain\models\ExpensesTest.java
+C:\dev\ControlFinance\src\back\src\test\java\control\finance\mapper\ExpensesMapperTest.java
+C:\dev\ControlFinance\src\back\src\test\java\control\finance\domain\dto\CashDtoTest.java
+C:\dev\ControlFinance\src\back\src\test\java\control\finance\domain\models\CashTest.java
+C:\dev\ControlFinance\src\back\src\test\java\control\finance\domain\dto\AccountDtoTest.java
+C:\dev\ControlFinance\src\back\src\test\java\control\finance\FinanceApplicationTests.java
+C:\dev\ControlFinance\src\back\src\test\java\control\finance\mapper\CashMapperTest.java
+C:\dev\ControlFinance\src\back\src\test\java\control\finance\domain\models\AccountTest.java
+C:\dev\ControlFinance\src\back\src\test\java\control\finance\domain\dto\ExpensesDtoTest.java
+C:\dev\ControlFinance\src\back\src\test\java\control\finance\mapper\AccountMapperTest.java

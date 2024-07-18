@@ -3,6 +3,8 @@ package control.finance.domain.dto;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
+import static control.finance.domain.CurrencyFormatter.formatToUSD;
+
 public class AccountDtoTest {
 
     @Test
@@ -19,7 +21,7 @@ public class AccountDtoTest {
 
         Double cashBalance = 1000.0;
         accountDto.setCashBalance(cashBalance);
-        assertThat(accountDto.getCashBalance()).isEqualTo(cashBalance);
+        assertThat(accountDto.getCashBalance()).isEqualTo("$1,000.00");
 
         Double totalExpenses = 500.0;
         accountDto.setTotalExpenses(totalExpenses);
@@ -35,7 +37,7 @@ public class AccountDtoTest {
         AccountDto accountDto = new AccountDto();
         accountDto.setId("123");
         accountDto.setIsEnabled(true);
-        accountDto.setCashBalance(1000.0);
+        accountDto.setCashBalance( 1000.0);
         accountDto.setTotalExpenses(500.0);
         accountDto.setTotalCash(1500.0);
 
